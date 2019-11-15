@@ -1,0 +1,133 @@
+<script src="custom/libraries/jquery.textfill.min.js" type="text/javascript"></script>
+
+<style>
+  body { background-color: #111111;  }
+
+  /* Simple Animation */
+  @-webkit-keyframes mymove {
+    0% { opacity: 1.0; }
+    50% { opacity: 0; }
+    100% { opacity: 1.0; }
+  }
+  @-moz-keyframes mymove {
+    0% { opacity: 1.0; }
+    50% { opacity: 0; }
+    100% { opacity: 1.0; }
+  }
+
+  .clock {
+    display: flex;
+    margin: 0 auto;
+    padding: 30px;
+    color: #fff;
+  }
+
+  :root {
+    --t-global: 100px;
+    --t-date: 40px;
+    --t-month: calc(var(--t-global) - var(--t-date));
+  }
+
+  .date {
+    font-family: 'Big Shoulders Text', 'Poiret One', cursive;
+    text-transform: uppercase;
+    width: var(--t-global);
+  }
+
+  #DateDayName {
+    width: var(--t-global);
+    height: 30px;
+    text-align: right;
+
+  }
+  #Date {
+    width: var(--t-date);
+    height: 40px;
+    text-align: right;
+    margin-right: 5px;
+  }
+  #DateMonth {
+    text-align: right;
+    width: var(--t-month);
+    height: 18px;
+  }
+  #DateYear {
+    width: var(--t-month);
+    height: 20px;
+    text-align: right;
+  }
+
+  .hour {
+    margin-left: 4px;
+    letter-spacing: 1px;
+    font-size: 80px;
+    font-family: 'Big Shoulders Text', 'Poiret One', cursive;
+    font-weight: 100;
+    line-height: 74px;
+  }
+
+  .dateDetail {
+    display: flex;
+  }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    // Create two variable with the names of the months and days in an array
+    var monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"];
+    var dayNames = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]
+
+    // Create a newDate() object
+    var newDate = new Date();
+    // Extract the current date from Date object
+    newDate.setDate(newDate.getDate());
+    // Output the day, date, month and year
+    $('#DateDayName').html('<span>'+dayNames[newDate.getDay()]+'</span>');
+    $('#Date').html('<span>'+newDate.getDate()+'</span>'+'</span>');
+    //$('#Date').html('<span>30</span>');
+    $('#DateMonth').html('<span>'+monthNames[newDate.getMonth()]+'</span>');
+    $('#DateYear').html('<span>'+newDate.getFullYear()+'</span>');
+
+    setInterval(function () {
+      // Create a newDate() object and extract the seconds of the current time on the visitor's
+      var seconds = new Date().getSeconds();
+      // Add a leading zero to seconds value
+      $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+    }, 1000);
+
+    setInterval(function () {
+      // Create a newDate() object and extract the minutes of the current time on the visitor's
+      var minutes = new Date().getMinutes();
+      // Add a leading zero to the minutes value
+      $("#min").html((minutes < 10 ? "0" : "") + minutes);
+    }, 1000);
+
+    setInterval(function () {
+      // Create a newDate() object and extract the hours of the current time on the visitor's
+      var hours = new Date().getHours();
+      // Add a leading zero to the hours value
+      $("#hours").html((hours < 10 ? "0" : "") + hours);
+    }, 1000);
+
+    $('.fitty').textfill({
+      maxFontPixels: 0 // as big as possible
+    });
+  });
+
+</script>
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text:600|Poiret+One&display=swap" rel="stylesheet">
+<div class="clock">
+  <div class="date">
+    <div id="DateDayName" class="fitty"></div>
+    <div class="dateDetail">
+      <div id="Date" class="fitty"></div>
+      <div>
+        <div id="DateMonth" class="fitty"></div>
+        <div id="DateYear" class="fitty"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hour">
+    <span id="hours"></span>:<span id="min"></span>
+  </div>
+</div>
