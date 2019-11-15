@@ -5,37 +5,37 @@
     --c-border: #888888;
 }
 
-[data-page="plan"] [data-category=""] > .widget-name {
-    background-color: pink !important;
-}
-
 [data-page="plan"] ul.flex-column a.active {
-    background-color: var(--c-border);
-    border-radius: 50%;
+    box-shadow: 54px 0px 59px -26px rgba(255,255,255,1);
 }
 
 [data-page="plan"] ul.flex-column {
-    background-color: rgba(0,0,0,0.8);
-    border: 1px solid var(--c-border);
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 6px 0px rgba(255,255,255,1);
 }
 [data-page="plan"] ul li:hover {
-    background-color: none;
+    background-color: transparent;
 }
-
+[data-page="plan"] .eqLogic-widget,
 [data-page="plan"] .cadre {
-    border: 1px solid var(--c-border);
     background-color: rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 18px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(255,255,255,1);
 }
 
+[data-page="plan"] .eqLogic-widget .widget-name,
+[data-page="plan"] [data-category=""] .widget-name,
 [data-page="plan"] .cadre .header {
     color: rgba(255,255,255,0.8);
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.6);
     text-align: center;
     padding: 10px;
     font-size: 17px;
     font-weight: normal;
     margin: 1px;
+}
+
+[data-page="plan"] #div_pageContainer div.meteo-content > table > tbody > tr {
+    background-color: transparent !important;
 }
 
 [data-page="plan"] .cadre .content {
