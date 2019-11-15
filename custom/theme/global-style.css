@@ -1,0 +1,13 @@
+/* repertoire par defaut des themes customs
+ * IP/desktop/custom/     
+ */
+[data-page="dashboard"] {
+    background: url("images/bg-002__1920x1080.jpg") top left no-repeat;
+}
+
+
+/* 
+ * data-page="dashboard"  Homepage
+ * data-page="plan"       Design
+ * data-page="view"       Vue
+ */
