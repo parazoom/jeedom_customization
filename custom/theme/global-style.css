@@ -5,6 +5,16 @@
     background: url("images/bg-002__1920x1080.jpg") top left no-repeat;
 }
 
+[data-page="false"] {
+    background: url("images/bg-002__1920x1080.jpg") top left no-repeat;
+}
+
+[data-page="false"]  .btn_help {
+    display: none
+}
+
+
+
 
 /* 
  * data-page="dashboard"  Homepage

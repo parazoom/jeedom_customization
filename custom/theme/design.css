@@ -2,42 +2,58 @@
  * Pages des DESIGN
  */
 :root {
-    --c-border: #888888;
+  --c-border: #888888;
 }
 
-[data-page="plan"] ul.flex-column a.active {
-    box-shadow: 54px 0px 59px -26px rgba(255,255,255,1);
+[data-page="plan"] ul.nav.custom-menu a.active {
+  box-shadow: 54px 0 59px -26px rgba(255, 255, 255, 1);
 }
 
-[data-page="plan"] ul.flex-column {
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 6px 0px rgba(255,255,255,1);
+[data-page="plan"] #menu-custom {
+  height: 100%;
 }
-[data-page="plan"] ul li:hover {
-    background-color: transparent;
+
+[data-page="plan"] ul.nav.custom-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
 }
+
+[data-page="plan"] ul.nav.custom-menu > li > a {
+  padding: 0;
+  border-radius: 50%;
+  width: 100px;
+}
+
+[data-page="plan"] ul.nav.custom-menu li a:hover,
+[data-page="plan"] ul.nav.custom-menu li:hover {
+  background-color: transparent;
+}
+
 [data-page="plan"] .eqLogic-widget,
 [data-page="plan"] .cadre {
-    background-color: rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 6px 0px rgba(255,255,255,1);
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 1);
 }
 
 [data-page="plan"] .eqLogic-widget .widget-name,
 [data-page="plan"] [data-category=""] .widget-name,
 [data-page="plan"] .cadre .header {
-    color: rgba(255,255,255,0.8);
-    background-color: rgba(0,0,0,0.6);
-    text-align: center;
-    padding: 10px;
-    font-size: 17px;
-    font-weight: normal;
-    margin: 1px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: normal;
+  margin: 1px;
 }
 
 [data-page="plan"] #div_pageContainer div.meteo-content > table > tbody > tr {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 [data-page="plan"] .cadre .content {
-    background-color: none;
+  background-color: transparent;
 }
