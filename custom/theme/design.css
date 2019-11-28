@@ -57,3 +57,24 @@
 [data-page="plan"] .cadre .content {
   background-color: transparent;
 }
+
+
+
+[data-tags="table-custom"] table {
+  border: 1px solid var(--c-border);
+}
+[data-tags="table-custom"] table tr {
+  border: 1px solid var(--c-border);
+}
+[data-tags="table-custom"] table tr:first-of-type {
+  background: pink;
+}
+[data-tags="table-custom"] table tr td {
+  padding: .5rem;
+}
+[data-tags="table-custom"] table tr td:first-of-type {
+
+}
+[data-tags="table-custom"] table tr > td:first-of-type {
+  border: 1px solid var(--c-border);
+}
