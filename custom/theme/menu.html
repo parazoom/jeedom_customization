@@ -1,44 +1,43 @@
 <ul class="nav custom-menu flex-column"></ul>
 
 <script>
-  $.urlParam = function (name) {
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results == null) {
-      return null;
-    }
-    return decodeURI(results[1]) || 0;
-  };
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results == null) {
+            return null;
+        }
+        return decodeURI(results[1]) || 0;
+    };
 
-  var links = {
-    1: { plan_id: 1, img: "icon_home.png"},
-    2: { plan_id: 11, img: "icon_skydive.png"},
-    3: { plan_id: 8, img: "icon_light.png"},
-    4: { plan_id: 0, img: "icon_planning2.png"},
-    5: { plan_id: 13, img: "icon_graff.png"},
-    6: { plan_id: 9, img: "icon_volets.png"},
-    7: { plan_id: 0, img: "icon_chauffage.png"},
-    8: { plan_id: 12, img: "icon_reseau.png"},
-  };
+    var links = {
+        1: { plan_id: 1, img: "icon_home"},
+        2: { plan_id: 11, img: "icon_skydive"},
+        3: { plan_id: 8, img: "icon_light"},
+        4: { plan_id: 14, img: "icon_wine"},
+        5: { plan_id: 13, img: "icon_graf"},
+        6: { plan_id: 9, img: "icon_volets"},
+        7: { plan_id: 0, img: "icon_chauffage"},
+        8: { plan_id: 12, img: "icon_network"},
+    };
 
-console.log(idIs);
+    console.log(idIs);
 
-  $.each( links, function (key, val) {
-    if (idIs === val.plan_id)  {
-      active_class = 'active';
-    } else {
-      active_class = 'podzob';
-    }
-    $('ul.nav.custom-menu').append('  <li class="nav-item">\n' +
-      '    <a class="nav-link '+active_class+'" href="index.php?v=d&p=plan&plan_id='+val.plan_id+'">\n' +
-      '      <img height=100px  width=100px src="custom/theme/images/'+val.img+'">\n' +
-      '    </a>\n' +
-      '  </li>')
-  });
+    $.each( links, function (key, val) {
+        if (idIs === val.plan_id)  {
+            active_class = 'active';
+        } else {
+            active_class = 'podzob';
+        }
+        $('ul.nav.custom-menu').append('  <li class="nav-item '+active_class+'">\n' +
+            '    <a class="icon '+val.img+' nav-link" href="index.php?v=d&p=plan&plan_id='+val.plan_id+'">\n' +
+            '    </a>\n' +
+            '  </li>')
+    });
 
-  $(".nav-link").click(function () {
-    let id_is = $(this).attr('href');
-    var current = (id_is[id_is.length -1]);
-    console.log(current);
-  });
+    $(".nav-link").click(function () {
+        let id_is = $(this).attr('href');
+        var current = (id_is[id_is.length -1]);
+        console.log(current);
+    });
 
 </script>
