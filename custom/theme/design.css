@@ -5,10 +5,6 @@
   --c-border: #888888;
 }
 
-[data-page="plan"] ul.nav.custom-menu a.active {
-  box-shadow: 54px 0 59px -26px rgba(255, 255, 255, 1);
-}
-
 [data-page="plan"] #menu-custom {
   height: 100%;
 }
@@ -22,14 +18,18 @@
 }
 
 [data-page="plan"] ul.nav.custom-menu > li > a {
-  padding: 0;
   border-radius: 50%;
-  width: 100px;
 }
 
-[data-page="plan"] ul.nav.custom-menu li a:hover,
+[data-page="plan"] ul.nav.custom-menu li {
+  border: 3px solid white;
+  border-radius: 50%;
+}
+[data-page="plan"] ul.nav.custom-menu li.active {
+  box-shadow: inset 0px 0px 30px 0px #fff
+}
 [data-page="plan"] ul.nav.custom-menu li:hover {
-  background-color: transparent;
+  box-shadow: inset 0px 0px 30px 10px #EEE;
 }
 
 [data-page="plan"] .eqLogic-widget,
@@ -77,4 +77,58 @@
 }
 [data-tags="table-custom"] table tr > td:first-of-type {
   border: 1px solid var(--c-border);
+}
+
+.icon_home {
+  mask: url("images/icon_home.svg") center center/70% 70% no-repeat;
+}
+.icon_skydive {
+  mask: url("images/icon_skydive.svg") center center/80% 80% no-repeat;
+}
+.icon_light {
+  mask: url("images/icon_light.svg") center center/70% 70% no-repeat;
+}
+.icon_wine {
+  mask: url("images/icon_wine.svg") center center/70% 70% no-repeat;
+}
+.icon_graf {
+  mask: url("images/icon_graf.svg") center center/60% 60% no-repeat;
+}
+.icon_volets {
+  mask: url("images/icon_volets.svg") center center/70% 70% no-repeat;
+}
+.icon_chauffage {
+  mask: url("images/icon_chauffage.svg") center center/60% 60% no-repeat;
+}
+.icon_network {
+  mask: url("images/icon_network.svg") center center/70% 70% no-repeat;
+}
+.icon {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+}
+
+/* Graff page Cave */
+[data-page="plan"] [data-graph_id="84805437"].graph-widget {
+  background-color: transparent !important;
+  border: none !important;
+}
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-plot-band {
+  fill: transparent !important;
+}
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-axis-labels > text,
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-legend-item:not(.highcharts-legend-item-hidden) text,
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-range-selector-buttons > text,
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-axis-labels text tspan {
+  fill: white !important;
+}
+
+[data-page="plan"] [data-graph_id="84805437"] :not(.gauge) > .highcharts-container .highcharts-axis-line {
+  stroke: white !important;
+}
+[data-page="plan"] [data-graph_id="84805437"] .highcharts-yaxis-grid .highcharts-grid-line {
+  stroke-width: 0.3 !important;
+  stroke: white !important;
+
 }
